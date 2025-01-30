@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Price Prediction</title>
+    <link rel="icon" href="static/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Stock Price Prediction</h1>
+
+        <!-- Linear Regression Section -->
+        <div class="prediction-section">
+            <h2>Linear Regression Prediction</h2>
+            <label for="lrInput">Enter the latest closing price:</label>
+            <input type="text" id="lrInput" placeholder="e.g., 125.30">
+            <button type="button" onclick="predictLR()">Predict</button>
+            <p id="lrResult"></p>
+        </div>
+
+        <!-- LSTM Section -->
+        <div class="prediction-section">
+            <h2>LSTM Prediction</h2>
+            <label for="lstmInput">Enter closing prices of last 5 days (comma separated):</label>
+            <input type="text" id="lstmInput" placeholder="e.g., 120.50, 122.00, 123.20, 124.30, 125.00">
+            <button type="button" onclick="predictLSTM()">Predict</button>
+            <p id="lstmResult"></p>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
